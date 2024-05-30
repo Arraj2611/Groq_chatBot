@@ -17,7 +17,7 @@ from langchain.prompts import PromptTemplate
 
 def main():
     # Get Groq API key
-    groq_api_key = os.environ['GROQ_API_KEY']
+    groq_api_key = st.secrets["hf_api_key"]
 
     # The title and greeting message of the Streamlit application
     st.title("Chat with Groq!")
