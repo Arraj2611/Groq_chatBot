@@ -6,4 +6,4 @@ langchain
 groq
 langchain_groq
 pathlib
-tenacity
+tenacity<8.4.0
