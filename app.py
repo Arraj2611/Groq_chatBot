@@ -1,10 +1,9 @@
 import streamlit as st
 import os
-from groq import Groq
 import random
 
-from langchain.chains import ConversationChain, LLMChain
-from langchain_core.prompts import (
+from langchain.chains import LLMChain
+from langchain.prompts import (
     ChatPromptTemplate,
     HumanMessagePromptTemplate,
     MessagesPlaceholder,
@@ -12,7 +11,6 @@ from langchain_core.prompts import (
 from langchain_core.messages import SystemMessage
 from langchain.chains.conversation.memory import ConversationBufferWindowMemory
 from langchain_groq import ChatGroq
-from langchain.prompts import PromptTemplate
 from pathlib import Path
 
 # --- PATH SETTINGS ---
