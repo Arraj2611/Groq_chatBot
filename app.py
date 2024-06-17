@@ -36,8 +36,8 @@ def main():
     if "messages" not in st.session_state:
         st.session_state.messages = []
 
-    for msg in st.session_state.messages:
-        message(msg["content"], is_user=(msg["role"] == "user"))
+    for i, msg in enumerate(st.session_state.messages):
+        message(msg["content"], is_user=(msg["role"] == "user"), key=str(i))
 
     # session state variable
     if 'chat_history' not in st.session_state:
