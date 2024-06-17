@@ -7,3 +7,4 @@ groq
 langchain_groq
 pathlib
 tenacity<8.4.0
+streamlit-chat
