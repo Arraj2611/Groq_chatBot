@@ -38,11 +38,9 @@ def main():
 
     for i, msg in enumerate(st.session_state.messages):
         if msg["role"] == "user":
-            with st.chat_message("user", key=f"user_{i}"):
-                st.write(msg["content"])
+            st.chat_message("user").write(msg["content"])
         else:
-            with st.chat_message("assistant", key=f"assistant_{i}"):
-                st.markdown(msg["content"])
+            st.chat_message("assistant").markdown(msg["content"])
 
     # session state variable
     if 'chat_history' not in st.session_state:
@@ -65,8 +63,7 @@ def main():
 
     if user_question:
         st.session_state.messages.append({"role": "user", "content": user_question})
-        with st.chat_message("user"):
-            st.write(user_question)
+        st.chat_message("user").write(user_question)
 
         # Construct a chat prompt template using various components
         prompt = ChatPromptTemplate.from_messages(
@@ -99,8 +96,7 @@ def main():
         st.session_state.chat_history.append({'human': user_question, 'AI': response})
         st.session_state.messages.append({"role": "assistant", "content": response})
         
-        with st.chat_message("assistant"):
-            st.markdown(response)
+        st.chat_message("assistant").markdown(response)
 
 
 if __name__ == "__main__":
