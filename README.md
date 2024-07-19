@@ -5,7 +5,7 @@
 ---
 ## To run locally
 1. Modify the `GROQ_API_KEY` from `st.secrets` to `os.gentenv` or just pass the api key which you can get at [keys](https://console.groq.com/keys).
-2. run command
+2. Run command
 ```
 pip install -r requirements.txt
 ```
